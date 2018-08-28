@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="TestArray">
+        <item>@string/test_1</item>
+        <item>@string/test_2</item>
+        <item>@string/test_3</item>
+        <item>@string/test_4</item>
+        <item>@string/test_5</item>
+    </array>
+
+</resources>

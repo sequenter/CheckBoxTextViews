@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<uk.co.onemandan.checkboxtextviews.ClipView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootClipView"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:background="@drawable/shape_background_translucent"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?selectableItemBackground"
+    android:minWidth="50dp">
+
+    <TextView
+        android:id="@+id/itemTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_gravity="center"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+</uk.co.onemandan.checkboxtextviews.ClipView>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CheckBoxTextViews">
+        <attr name="cbtv_default_background_color"      format="color|reference" />
+        <attr name="cbtv_default_text_color"            format="color|reference" />
+        <attr name="cbtv_selected_background_color"     format="color|reference" />
+        <attr name="cbtv_selected_text_color"           format="color|reference" />
+        <attr name="cbtv_items"                         format="reference" />
+    </declare-styleable>
+
+</resources>
