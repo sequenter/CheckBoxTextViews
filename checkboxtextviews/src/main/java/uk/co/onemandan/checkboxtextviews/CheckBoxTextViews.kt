@@ -28,38 +28,20 @@ class CheckBoxTextViews(context: Context, attrs: AttributeSet): LinearLayout(con
     private var _selectedBackgroundColour   = 0
     private var _selectedTextColour         = 0
 
-    private val _selectedItems: MutableList<String> = ArrayList()
+    private var _defaultSelected            = false
+
+    private var _selectedItems: MutableList<String>? = null
     private var _selectedItemListener: CheckBoxTextViewsListener? = null
 
     override fun onClick(v: View?) {
-        //Update whether or not the item has been selected via the tag
-        if(v!!.tag == null){
-            v.tag = true
-        } else {
-            v.tag = !(v.tag as Boolean)
-        }
-
-        val title   = v.itemTextView
-        val root    = v.rootClipView
-
-        if(v.tag as Boolean){
-            title.setTextColor(_selectedTextColour)
-            setBackgroundColour(root, _selectedBackgroundColour)
-
-            _selectedItems.add(title.text.toString())
-        } else {
-            title.setTextColor(_defaultTextColour)
-            setBackgroundColour(root, _defaultBackgroundColour)
-
-            _selectedItems.remove(title.text.toString())
-        }
-
-        _selectedItemListener?.onItemSelected(_selectedItems)
+        selectView(v)
     }
 
     private fun init(context: Context, attrs: AttributeSet){
         val root = inflate(context, R.layout.checkbox_item_host, this)
         _flexbox = root.rootFlexboxLayout
+
+        _selectedItems = ArrayList()
 
         handleDefaultAttributes(context)
         handleAttributes(context, attrs)
@@ -89,6 +71,8 @@ class CheckBoxTextViews(context: Context, attrs: AttributeSet): LinearLayout(con
                 R.styleable.CheckBoxTextViews_cbtv_selected_background_color, _selectedBackgroundColour)
         _selectedTextColour         = ta.getColor(
                 R.styleable.CheckBoxTextViews_cbtv_selected_text_color, _selectedTextColour)
+        _defaultSelected            = ta.getBoolean(
+                R.styleable.CheckBoxTextViews_cbtv_selected, false)
 
         val itemsId = ta.getResourceId(R.styleable.CheckBoxTextViews_cbtv_items, 0)
         if(itemsId != 0){
@@ -117,6 +101,10 @@ class CheckBoxTextViews(context: Context, attrs: AttributeSet): LinearLayout(con
         checkBoxItem.setOnClickListener(this)
 
         _flexbox!!.addView(checkBoxItem)
+
+        if(_defaultSelected){
+            selectView(checkBoxItem)
+        }
     }
 
     private fun setBackgroundColour(view: View, colour: Int){
@@ -124,8 +112,34 @@ class CheckBoxTextViews(context: Context, attrs: AttributeSet): LinearLayout(con
                 PorterDuff.Mode.SRC_IN)
     }
 
+    private fun selectView(v: View?){
+        //Update whether or not the item has been selected via the tag
+        if(v!!.tag == null){
+            v.tag = true
+        } else {
+            v.tag = !(v.tag as Boolean)
+        }
+
+        val title   = v.itemTextView
+        val root    = v.rootClipView
+
+        if(v.tag as Boolean){
+            title.setTextColor(_selectedTextColour)
+            setBackgroundColour(root, _selectedBackgroundColour)
+
+            _selectedItems!!.add(title.text.toString())
+        } else {
+            title.setTextColor(_defaultTextColour)
+            setBackgroundColour(root, _defaultBackgroundColour)
+
+            _selectedItems!!.remove(title.text.toString())
+        }
+
+        _selectedItemListener?.onItemSelected(_selectedItems!!)
+    }
+
     fun getSelectedItems(): List<String> {
-        return _selectedItems
+        return _selectedItems!!
     }
 
     fun setSelectedItemListener(listener: CheckBoxTextViewsListener){
