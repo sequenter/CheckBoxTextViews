@@ -30,7 +30,7 @@ class CheckBoxTextViews(context: Context, attrs: AttributeSet): LinearLayout(con
 
     private var _defaultSelected            = false
 
-    private var _selectedItems: MutableList<String>? = null
+    private var _selectedItems: ArrayList<String>? = null
     private var _selectedItemListener: CheckBoxTextViewsListener? = null
 
     override fun onClick(v: View?) {
@@ -138,7 +138,7 @@ class CheckBoxTextViews(context: Context, attrs: AttributeSet): LinearLayout(con
         _selectedItemListener?.onItemSelected(_selectedItems!!)
     }
 
-    fun getSelectedItems(): List<String> {
+    fun getSelectedItems(): ArrayList<String> {
         return _selectedItems!!
     }
 
