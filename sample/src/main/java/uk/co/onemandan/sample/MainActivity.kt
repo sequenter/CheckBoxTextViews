@@ -10,11 +10,5 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        itemsCheckBoxTextViews.setSelectedItemListener(object: CheckBoxTextViewsListener{
-            override fun onItemSelected(items: List<String>) {
-                selectedItemsTextView.text = items.joinToString(", ")
-            }
-        })
     }
 }

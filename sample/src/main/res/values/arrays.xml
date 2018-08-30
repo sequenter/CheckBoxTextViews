@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <array name="TestArray">
-        <item>@string/test_1</item>
-        <item>@string/test_2</item>
-        <item>@string/test_3</item>
-        <item>@string/test_4</item>
-        <item>@string/test_5</item>
+    <array name="LoremIpsum">
+        <item>lorem</item>
+        <item>ipsum</item>
+        <item>dolor</item>
+        <item>sit</item>
+        <item>consectetur</item>
+        <item>adipiscing</item>
+        <item>elit</item>
+        <item>sed</item>
+        <item>do</item>
+        <item>eiusmod</item>
+        <item>tempor</item>
+        <item>incididunt</item>
+        <item>ut</item>
+        <item>labore</item>
+        <item>et</item>
+        <item>dolore</item>
+        <item>magna</item>
+        <item>aliqua</item>
+        <item>ut</item>
+        <item>enim</item>
+        <item>ad</item>
+        <item>minim</item>
+        <item>veniam</item>
+        <item>quis</item>
+        <item>nostrud</item>
     </array>
 
 </resources>

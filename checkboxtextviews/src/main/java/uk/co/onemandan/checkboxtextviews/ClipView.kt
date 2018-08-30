@@ -9,6 +9,12 @@ import android.util.AttributeSet
 import android.view.View
 import android.widget.FrameLayout
 
+/*
+ * When setting the background of a drawable with rounded corners in conjunction of setting the
+ * foreground to make use of '?selectableItemBackground', the ripple will extend further than the
+ * rounded corners.  Instead, a 'ClipView' is used, so that the ripple is only rendered on the
+ * rounded rectangle.
+ */
 class ClipView : FrameLayout {
 
     private var _context        : Context?  = null

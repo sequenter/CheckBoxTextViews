@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CheckBoxTextViews.iml" filepath="$PROJECT_DIR$/CheckBoxTextViews.iml" />
-      <module fileurl="file://$PROJECT_DIR$/checkboxtextviews/app.iml" filepath="$PROJECT_DIR$/checkboxtextviews/app.iml" />
+      <module fileurl="file://C:\Users\danie\Desktop\CheckBoxTextViews\checkboxtextviews\app.iml" filepath="C:\Users\danie\Desktop\CheckBoxTextViews\checkboxtextviews\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/checkboxtextviews/checkboxtextviews.iml" filepath="$PROJECT_DIR$/checkboxtextviews/checkboxtextviews.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />
     </modules>
   </component>
